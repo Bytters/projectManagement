@@ -26,10 +26,10 @@ const answerResolved = answer.then(async (Answers) => {
             Create(Answers, createTask, fileDirectory)
             break
         case "see":
-            See(Answers)
+            See(Answers, fileDirectory)
+            break
+        default:
+            console.log("Escolha alguma opção")
             break
     }
-
-    // see
-    
 })

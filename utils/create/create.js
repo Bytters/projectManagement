@@ -6,14 +6,15 @@ async function Create(Ans, task, file) {
     task.description = await input({
         message: "Qual a descrição de sua tarefa?",
     })
-    task.situation = await select({
+    task.value = await select({
         message: "Qual A situação de sua tarefa?",
         choices: [
-            { name: "Concluido", value: true },
-            { name: "Em progresso", value: "andamento" },
-            { name: "Não concluida", value: false },
+            { name: "Concluido", value: "Concluida" },
+            { name: "Em progresso", value: "Em andamento" },
+            { name: "Não concluida", value: "Não concluido" },
         ],
     })
+ 
 
     //lê o arquivo 'tarefas.json' e adiciona um novo campo
     fs.readFile(file, "utf-8", (err, data) => {
