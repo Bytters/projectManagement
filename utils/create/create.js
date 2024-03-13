@@ -14,7 +14,6 @@ async function Create(Ans, task, file) {
             { name: "Não concluida", value: "Não concluido" },
         ],
     })
- 
 
     //lê o arquivo 'tarefas.json' e adiciona um novo campo
     fs.readFile(file, "utf-8", (err, data) => {
