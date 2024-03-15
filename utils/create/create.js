@@ -1,4 +1,4 @@
-import { input, select } from "@inquirer/prompts"
+import { select, input } from "@inquirer/prompts"
 import fs from "fs"
 
 async function Create(Ans, task, file) {

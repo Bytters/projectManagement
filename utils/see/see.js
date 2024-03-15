@@ -1,4 +1,4 @@
-import { checkbox, createPrompt, input, select } from "@inquirer/prompts"
+import { select } from "@inquirer/prompts"
 import fs from "fs"
 
 async function See(Ans, file) {
