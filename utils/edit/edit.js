@@ -34,12 +34,10 @@ async function Edit(file, task) {
                 ],
             })
 
-            console.log(Select)
 
             const saveFile = (data) => {
                 Data[getNum][Select] = data
                 const newData = JSON.stringify(Data, null, 2) // converte para JSON
-                console.log(Data)
 
                 fs.writeFile(file, newData, "utf8", (err) => {
                     console.log(err || "tarefa atualizada")
@@ -63,7 +61,6 @@ async function Edit(file, task) {
                         }
                     },
                     description: async () => {
-                        console.log(description !== -1)
                         if (description !== -1) {
                             let Description = await input({
                                 message: "Qual a nova descrição?",
