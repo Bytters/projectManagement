@@ -1,7 +1,8 @@
 import { checkbox, createPrompt, input, select } from "@inquirer/prompts"
 import { Create } from "./utils/create/create.js"
 import { See } from "./utils/see/see.js"
-import { Edit } from "./utils/edit/Edit.js"
+import { Edit } from "./utils/edit/edit.js"
+import { Delete } from "./utils/delete/delete.js"
 import fs from "fs"
 
 const answer = select({
@@ -10,6 +11,7 @@ const answer = select({
         { name: "Ver Tarefa", value: "see" },
         { name: "Criar Tarefa", value: "create" },
         { name: "Editar Tarefa", value: "edit" },
+        { name: "Deletar Tarefa", value: "delete" },
     ],
 })
 
@@ -32,6 +34,9 @@ const answerResolved = answer.then(async (Answers) => {
             break
         case "edit":
             Edit(fileDirectory, createTask)
+            break
+        case "delete":
+            Delete(fileDirectory, createTask)
             break
         default:
             console.log("Escolha alguma opção")
